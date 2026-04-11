@@ -1,8 +1,8 @@
-# NTFCTF
+# Not That Funny, CTF
 
 ## Purpose
 
-NTFCTF is a graded binary exploitation lab focused on a Raspberry/ARM stack-overflow scenario and practical payload delivery. It provides source code, binaries, shellcode, and exploit scripts so learners can reproduce the full attack chain in a controlled environment.
+NTFCTF is a binary exploitation lab focused on a Raspberry/ARM stack-overflow scenario and practical payload delivery. It provides source code, binaries, shellcode, and exploit scripts so learners can reproduce the full attack chain in a controlled environment.
 
 ## Repository Layout
 
@@ -11,7 +11,8 @@ NTFCTF is a graded binary exploitation lab focused on a Raspberry/ARM stack-over
 - `raspberry-exploit/exploit/`: Exploit payload script (`exploit.py`).
 - `raspberry-exploit/shellcode/`: Shellcode sources.
 - `raspberry-exploit/docs/`: Detailed write-up.
-- `assets/overview.png`: End-to-end attack workflow diagram.
+- `raspberry-exploit/evidence/`: Recorded execution evidence (`NTFCTF.mov`).
+- `assets/`: Visual references (`overview.png`, `stack_overflow.png`, `shellcode_stack_manipulation.png`).
 
 ## Overview Diagram
 
@@ -58,3 +59,11 @@ ssh -L 8080:127.0.0.1:8080 <user>@<raspberry-ip>
 ```
 
 Confirm port 8080 is allowed by host firewall/network policy before testing.
+
+### 5. Validate service is reachable on host
+
+```bash
+curl http://127.0.0.1:8080
+```
+
+If exploitation and forwarding are successful, you should receive a response from the deployed challenge service.
